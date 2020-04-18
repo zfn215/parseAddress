@@ -2,7 +2,7 @@
 
 国内地址地区智能解析，无需完整地址也能正确匹配  
 如有识别不准的地址请 [issuse](https://github.com/akebe/address-parse/issues)
-
+(更新最新地址数据如不需要请star原作者)
 ### Install
 `npm install address-parse --save`
 
