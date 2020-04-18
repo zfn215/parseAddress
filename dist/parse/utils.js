@@ -16,8 +16,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  * @returns {{code: *, province: (*|string), city: (*|string), area: (*|string)}}
  */
 function getAreaByCode(code) {
-  var pCode = code.slice(0, 2) + '0000',
-      cCode = code.slice(0, 4) + '00';
+  var pCode = '' + code.slice(0, 2),
+      cCode = '' + code.slice(0, 4);
   return {
     code: code,
     province: _area3.default.province_list[pCode] || '',
@@ -44,14 +44,14 @@ function getTargetParentAreaListByCode(target, code) {
     name: _area3.default.area_list[code] || ''
   });
   if (['city', 'province'].includes(target)) {
-    code = code.slice(0, 4) + '00';
+    code = code.slice(0, 4);
     result.unshift({
       code: code,
       name: _area3.default.city_list[code] || ''
     });
   }
   if (target === 'province') {
-    code = code.slice(0, 2) + '0000';
+    code = code.slice(0, 2);
     result.unshift({
       code: code,
       name: _area3.default.province_list[code] || ''

@@ -1,7 +1,7 @@
 {
-  "name": "address-parse",
+  "name": "addres-parse-weidian",
   "author": "akebe <asseek@163.com>",
-  "version": "1.1.1",
+  "version": "1.1.8",
   "description": "cn address parse",
   "main": "dist/parse/index.js",
   "devDependencies": {
@@ -34,7 +34,10 @@
   "homepage": "https://github.com/akebe/address-parse",
   "repository": {
     "type": "git",
-    "url": "git@github.com:akebe/address-parse.git"
+    "url": "git+ssh://git@github.com/akebe/address-parse.git"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/akebe/address-parse/issues"
+  }
 }

@@ -11,8 +11,8 @@ import AREA from '../area';
  * @returns {{code: *, province: (*|string), city: (*|string), area: (*|string)}}
  */
 function getAreaByCode(code) {
-  const pCode = `${code.slice(0, 2)}0000`,
-    cCode = `${code.slice(0, 4)}00`;
+  const pCode = `${code.slice(0, 2)}`,
+    cCode = `${code.slice(0, 4)}`;
   return {
     code: code,
     province: AREA.province_list[pCode] || '',
@@ -34,14 +34,14 @@ function getTargetParentAreaListByCode(target, code) {
     name: AREA.area_list[code] || '',
   });
   if (['city', 'province'].includes(target)) {
-    code = code.slice(0, 4) + '00';
+    code = code.slice(0, 4);
     result.unshift({
       code,
       name: AREA.city_list[code] || '',
     });
   }
   if (target === 'province') {
-    code = code.slice(0, 2) + '0000';
+    code = code.slice(0, 2);
     result.unshift({
       code,
       name: AREA.province_list[code] || '',

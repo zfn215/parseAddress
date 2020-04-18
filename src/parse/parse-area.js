@@ -25,7 +25,7 @@ const AreaKeys = [
   '仫佬族自治县', '毛南族自治县', '黎族自治县', '羌族自治县', '彝族自治县', '藏族自治县', '纳西族自治县', '裕固族自治县', '哈萨克族自治县',
   '哈尼族自治县', '拉祜族自治县', '佤族自治县',
   '左旗', '右旗', '中旗', '后旗', '联合旗', '自治旗', '旗', '自治县',
-  '区', '县', '市',
+  '区', '县', '市' ,'镇', '园'
 ];
 
 class ParseArea {
@@ -213,7 +213,7 @@ class ParseArea {
    * @returns {string}
    */
   static parse_area_by_city(address, result) {
-    const areaList = Utils.getTargetAreaListByCode('area', result.code);
+    let areaList = Utils.getTargetAreaListByCode('area', result.code);
     for (let area of areaList) {
       let index = address.indexOf(area.name);
       let shortArea = index > -1 ? '' : ParseArea.AreaShort[area.code];
