@@ -4,11 +4,10 @@
 如有识别不准的地址请 [issuse](https://github.com/akebe/address-parse/issues)
 (更新最新地址数据如不需要请star原作者)
 ### Install
-`npm install address-parse --save`
-
+`npm install addres-parse-weidian --save`
 ### Start
 ````
-import AddressParse from 'address-parse';
+import AddressParse from 'addres-parse-weidian';
 
 const [result] = AddressParse.parse('福建省福州市福清市石竹街道义明综合楼3F，15000000000，asseek');
 console.log(result);
@@ -34,11 +33,6 @@ parse默认识别到第一个可信结果就会返回内容，但这不一定准
 内部有进行判断，可信度较高的地址会在数组前面
 ````
 const [result, ...results] = AddressParse.parse('张l,15222222222,和林格尔 盛乐经济工业园区内蒙古师范大学盛乐校区', true);
-
-console.log(result, results);
-````
-包内暴露了地址数据对象`AREA`和工具函数对象`Utils`
-````
 import AddressParse, {AREA, Utils} from 'address-parse';
 
 const {
@@ -62,27 +56,3 @@ const [city] = Utils.getTargetAreaListByCode('city', '350181', true);
 // 非标准地区对象转换为标准地区对象
 const result = Utils.getAreaByAddress({province: '福建', city: '福州', area: '福清'});
 // {"code":"350181","province":"福建省","city":"福州市","area":"福清市"}
-
-// 提供几个内置正则表达式
-Utils.Reg. //mobile phone zipCode
-````
-### 页面直接引入使用
-已打包成单文件`dist/bundle.js`
-可以直接通过标签引用
-```
-<script src="./bundle.js"></script>
-<script>
- var results = AddressParse.parse('福建省福州市福清市石竹街道义明综合楼3F，15000000000，asseek');
- console.log(results);
-</script>
-```
-可以使用全局变量`AddressParse`来调用。  
-包内暴露的方法已经直接挂载在`AddressParse`实例上以供调用
-
-
-### 组件库
- [element-address](https://github.com/akebe/element-address)  
- 基于 [address-parse](https://github.com/akebe/address-parse) 通过 [element-ui](https://github.com/ElemeFE/element) 实现的即开即用地址类组件库
- 
-### LICENSE
-[MIT](https://en.wikipedia.org/wiki/MIT_License)
