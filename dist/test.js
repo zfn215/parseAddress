@@ -20,8 +20,7 @@ function _toArray(arr) { return Array.isArray(arr) ? arr : Array.from(arr); } /*
 //const Parse = require('address-parse').default;
 
 // 测试地址 规则更新需要确保这里面的地址可以被正确解析
-var list = [['福建省福州市福清市石竹街道义明综合楼3F，15000000000，asseek', '350181'], ['广东省东莞市寮步镇，15000000000，asseek', '350181'], ['广东省东莞市石碣镇，15000000000，asseek', '350181'], ['广东省东莞市清溪镇，15000000000，asseek', '350181'], ['河南省周口市淮阳县，15000000000，asseek', '350181']];
-
+var list = [['海南省儋州市海头镇，15000000000，asseek']];
 var index = 0;
 var isSuccess = true;
 console.time('解析耗时');
