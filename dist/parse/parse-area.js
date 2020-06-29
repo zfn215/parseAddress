@@ -33,7 +33,7 @@ var ProvinceKeys = ['特别行政区', '古自治区', '维吾尔自治区', '�
 
 var CityKeys = ['布依族苗族自治州', '苗族侗族自治州', '藏族羌族自治州', '哈尼族彝族自治州', '壮族苗族自治州', '傣族景颇族自治州', '蒙古族藏族自治州', '傣族自治州', '白族自治州', '藏族自治州', '彝族自治州', '回族自治州', '蒙古自治州', '朝鲜族自治州', '地区', '哈萨克自治州', '盟', '市'];
 
-var AreaKeys = ['满族自治县', '满族蒙古族自治县', '蒙古族自治县', '朝鲜族自治县', '回族彝族自治县', '彝族回族苗族自治县', '彝族苗族自治县', '土家族苗族自治县', '布依族苗族自治县', '苗族布依族自治县', '彝族傣族自治县', '傣族彝族自治县', '仡佬族苗族自治县', '黎族苗族自治县', '苗族侗族自治县', '哈尼族彝族傣族自治县', '哈尼族彝族自治县', '彝族哈尼族拉祜族自治县', '傣族拉祜族佤族自治县', '傣族佤族自治县', '拉祜族佤族布朗族傣族自治县', '苗族瑶族傣族自治县', '彝族回族自治县', '独龙族怒族自治县', '保安族东乡族撒拉族自治县', '回族土族自治县', '撒拉族自治县', '哈萨克自治县', '塔吉克自治县', '回族自治县', '畲族自治县', '土家族自治县', '布依族自治县', '苗族自治县', '瑶族自治县', '侗族自治县', '水族自治县', '傈僳族自治县', '仫佬族自治县', '毛南族自治县', '黎族自治县', '羌族自治县', '彝族自治县', '藏族自治县', '纳西族自治县', '裕固族自治县', '哈萨克族自治县', '哈尼族自治县', '拉祜族自治县', '佤族自治县', '左旗', '右旗', '中旗', '后旗', '联合旗', '自治旗', '旗', '自治县', '区', '县', '市', '镇', '园', '农场'];
+var AreaKeys = ['满族自治县', '满族蒙古族自治县', '蒙古族自治县', '朝鲜族自治县', '回族彝族自治县', '彝族回族苗族自治县', '彝族苗族自治县', '土家族苗族自治县', '布依族苗族自治县', '苗族布依族自治县', '彝族傣族自治县', '傣族彝族自治县', '仡佬族苗族自治县', '黎族苗族自治县', '苗族侗族自治县', '哈尼族彝族傣族自治县', '哈尼族彝族自治县', '彝族哈尼族拉祜族自治县', '傣族拉祜族佤族自治县', '傣族佤族自治县', '拉祜族佤族布朗族傣族自治县', '苗族瑶族傣族自治县', '彝族回族自治县', '独龙族怒族自治县', '保安族东乡族撒拉族自治县', '回族土族自治县', '撒拉族自治县', '哈萨克自治县', '塔吉克自治县', '回族自治县', '畲族自治县', '土家族自治县', '布依族自治县', '苗族自治县', '瑶族自治县', '侗族自治县', '水族自治县', '傈僳族自治县', '仫佬族自治县', '毛南族自治县', '黎族自治县', '羌族自治县', '彝族自治县', '藏族自治县', '纳西族自治县', '裕固族自治县', '哈萨克族自治县', '哈尼族自治县', '拉祜族自治县', '佤族自治县', '左旗', '右旗', '中旗', '后旗', '联合旗', '自治旗', '旗', '自治县', '区', '县', '市', '镇', '园', '农场', '高新', '经济'];
 
 var ParseArea = function () {
   _createClass(ParseArea, null, [{
@@ -93,6 +93,21 @@ var ParseArea = function () {
       var _results;
 
       this.results = [];
+      if (address.indexOf('南昌高新技术产业开发区') !== -1) {
+        address = address.substring(address.indexOf('南昌高新技术产业开发区'));
+      }
+      if (address.indexOf('南昌经济技术开发区') !== -1) {
+        address = address.substring(address.indexOf('南昌经济技术开发区'));
+      }
+      if (address.indexOf('淮东经济技术开发区') !== -1) {
+        address = address.substring(address.indexOf('淮东经济技术开发区'));
+      }
+      if (address.indexOf('岳阳经济技术开发区') !== -1) {
+        address = address.substring(address.indexOf('岳阳经济技术开发区'));
+      }
+      if (address.indexOf('高新西区') !== -1) {
+        address = '成都' + address.substring(address.indexOf('高新西区'));
+      }
 
       // 正向解析
       (_results = this.results).unshift.apply(_results, _toConsumableArray(ParseArea.parseByProvince(address)));
@@ -303,6 +318,7 @@ var ParseArea = function () {
     key: 'parse_area_by_city',
     value: function parse_area_by_city(address, result) {
       var areaList = _utils2.default.getTargetAreaListByCode('area', result.code);
+      var areaListParent = _utils2.default.getTargetAreaListByCode('area', result.code, true);
       var _iteratorNormalCompletion4 = true;
       var _didIteratorError4 = false;
       var _iteratorError4 = undefined;

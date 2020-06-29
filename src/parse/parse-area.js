@@ -25,7 +25,7 @@ const AreaKeys = [
   '仫佬族自治县', '毛南族自治县', '黎族自治县', '羌族自治县', '彝族自治县', '藏族自治县', '纳西族自治县', '裕固族自治县', '哈萨克族自治县',
   '哈尼族自治县', '拉祜族自治县', '佤族自治县',
   '左旗', '右旗', '中旗', '后旗', '联合旗', '自治旗', '旗', '自治县',
-  '区', '县', '市' ,'镇', '园', '农场'
+  '区', '县', '市' ,'镇', '园', '农场' ,'高新', '经济',
 ];
 
 class ParseArea {
@@ -81,6 +81,21 @@ class ParseArea {
    */
   parse(address, parseAll) {
     this.results = [];
+   if(address.indexOf('南昌高新技术产业开发区')!==-1){
+    address = address.substring(address.indexOf('南昌高新技术产业开发区'))
+   }
+   if(address.indexOf('南昌经济技术开发区')!==-1){
+    address = address.substring(address.indexOf('南昌经济技术开发区'))
+   }
+   if(address.indexOf('淮东经济技术开发区')!==-1){
+    address = address.substring(address.indexOf('淮东经济技术开发区'))
+   }
+   if(address.indexOf('岳阳经济技术开发区')!==-1){
+    address = address.substring(address.indexOf('岳阳经济技术开发区'))
+   }
+   if(address.indexOf('高新西区')!==-1){
+    address = '成都' +  address.substring(address.indexOf('高新西区'))
+   }
 
     // 正向解析
     this.results.unshift(...ParseArea.parseByProvince(address));
@@ -214,29 +229,31 @@ class ParseArea {
    */
   static parse_area_by_city(address, result) {
     let areaList = Utils.getTargetAreaListByCode('area', result.code);
-    for (let area of areaList) {
-      let index = address.indexOf(area.name);
-      let shortArea = index > -1 ? '' : ParseArea.AreaShort[area.code];
-      let areaLength = shortArea ? shortArea.length : area.name.length;
-      if (shortArea) {
-        index = address.indexOf(shortArea);
-      }
-      if (index > -1 && index < 3) {
-        result.area = area.name;
-        result.code = area.code;
-        address = address.substr(index + areaLength);
-        //如果是用短名匹配的 要替换市关键字
+    let areaListParent = Utils.getTargetAreaListByCode('area', result.code,true);
+      for (let area of areaList) {
+        let index = address.indexOf(area.name);
+        let shortArea = index > -1 ? '' : ParseArea.AreaShort[area.code];
+        let areaLength = shortArea ? shortArea.length : area.name.length;
         if (shortArea) {
-          for (let key of AreaKeys) {
-            if (address.indexOf(key) === 0) {
-              address = address.substr(key.length);
+          index = address.indexOf(shortArea);
+        }
+        if (index > -1 && index < 3) {
+          result.area = area.name;
+          result.code = area.code;
+          address = address.substr(index + areaLength);
+          //如果是用短名匹配的 要替换市关键字
+          if (shortArea) {
+            for (let key of AreaKeys) {
+              if (address.indexOf(key) === 0) {
+                address = address.substr(key.length);
+              }
             }
           }
+          break;
         }
-        break;
       }
-    }
-    return address;
+      return address;
+    
   }
 
   /**
