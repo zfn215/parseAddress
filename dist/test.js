@@ -22,7 +22,7 @@ function _toArray(arr) { return Array.isArray(arr) ? arr : Array.from(arr); } /*
 // 测试地址 规则更新需要确保这里面的地址可以被正确解析
 var list = [
 // ['江西省南昌市南昌经济技术开发区，15000000000，asseek'],
-['新疆维吾尔自治区, 昌吉回族自治州,淮东经济技术开发区，15000000000，asseek']];
+['江西省, 九江市,八里湖新区，15000000000，asseek']];
 var index = 0;
 var isSuccess = true;
 console.time('解析耗时');
