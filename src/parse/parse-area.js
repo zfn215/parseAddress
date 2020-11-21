@@ -90,7 +90,7 @@ class ParseArea {
    if(address.indexOf('淮东经济技术开发区')!==-1){
     address = address.substring(address.indexOf('淮东经济技术开发区'))
    }
-   if(address.indexOf('岳阳经济技术开发区')!==-1){
+   if(address.indexOf('岳阳经济技术开发区')!==-1){市
     address = address.substring(address.indexOf('岳阳经济技术开发区'))
    }
    if(address.indexOf('高新西区')!==-1){
@@ -253,7 +253,7 @@ class ParseArea {
         }
       }
       return address;
-    
+
   }
 
   /**

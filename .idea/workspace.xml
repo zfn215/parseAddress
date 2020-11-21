@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5511bc8b-562b-4582-8c27-5a3123a10d38" name="Default" comment="测试添加的地址是否好用">
+    <list default="true" id="5511bc8b-562b-4582-8c27-5a3123a10d38" name="Default" comment="添加一个两江新区">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/area.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/area.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/area.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/area.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/parse/parse-area.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/parse/parse-area.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/test.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parse/parse-area.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/parse/parse-area.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/test.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +130,8 @@
       <workItem from="1582522637601" duration="690000" />
       <workItem from="1583894586482" duration="931000" />
       <workItem from="1605681796422" duration="2306000" />
-      <workItem from="1605770563219" duration="1235000" />
+      <workItem from="1605770563219" duration="2239000" />
+      <workItem from="1605924454272" duration="274000" />
     </task>
     <task id="LOCAL-00001" summary="项目重构 1.0.0">
       <created>1572182652861</created>
@@ -268,7 +273,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605751232828</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="添加一个两江新区">
+      <created>1605772411797</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1605772411797</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -295,13 +307,14 @@
     <MESSAGE value="修复地区键名清洗会导致的问题" />
     <MESSAGE value="长治县的添加" />
     <MESSAGE value="测试添加的地址是否好用" />
-    <option name="LAST_COMMIT_MESSAGE" value="测试添加的地址是否好用" />
+    <MESSAGE value="添加一个两江新区" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加一个两江新区" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="598" y="65" key="CommitChangelistDialog2" timestamp="1605751232744">
+    <state x="598" y="65" key="CommitChangelistDialog2" timestamp="1605772411687">
       <screen x="0" y="0" width="2048" height="1152" />
     </state>
-    <state x="598" y="65" key="CommitChangelistDialog2/0.0.2048.1152@0.0.2048.1152" timestamp="1605751232744" />
+    <state x="598" y="65" key="CommitChangelistDialog2/0.0.2048.1152@0.0.2048.1152" timestamp="1605772411687" />
     <state x="689" y="259" key="search.everywhere.popup" timestamp="1605750107206">
       <screen x="0" y="0" width="2048" height="1152" />
     </state>
